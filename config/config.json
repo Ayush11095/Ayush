@@ -1,0 +1,10 @@
+{
+    "db_url": {
+        "host": "10.0.0.1",
+        "port": 4321,
+        "password": "secureadminpassword",
+        "locale": "de",
+        "context": "dbApp",
+        "monitoring": false
+    }
+}
