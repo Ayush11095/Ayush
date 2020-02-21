@@ -8,7 +8,8 @@ module.exports = function(app){
     app.use('/api/user',user);
     app.use('/api/auth',login);
     app.use('/api/product',product);
-    //app.use('/api/review',review);
+    app.use('/api/review',review);
     app.all('*',(req,res)=>{
         res.send('invalid url');
-    });}
+    });
+}
