@@ -8,16 +8,16 @@ exports.create_product = (req,res)=>{
 
     product.findOne({p_id: content.p_id}, (err,docs)=>{
         if (docs===null || docs===undefined) {
-            db_user.findOne({_id: u_id}, (req,docs)=>{
+            user.findOne({_id: user_id}, (req,docs)=>{
                 if (docs!==null && docs!==undefined) {
-                 review.find({p_id: content.p_id}, (req,res)=>{
+                 review.find({p_id: content.p_id}, (err,docs)=>{
                     if (docs.length) {
                         var obj = new product({
                             p_id: content.p_id,
                             p_name: content.p_name,
                             p_desc: content.p_desc,
                             p_image: content.p_image,
-                            obj_id:req.params.u_id,
+                            obj_id: user_id,
                             reviews: docs
                         })
                         obj.save((err,data)=>{
@@ -33,7 +33,7 @@ exports.create_product = (req,res)=>{
                             p_name: content.p_name,
                             p_desc: content.p_desc,
                             p_image: content.p_image,
-                            obj_id:req.params.u_id,
+                            obj_id: user_id,
                             reviews: []
                         })
                         obj.save((err,data)=>{
