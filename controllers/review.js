@@ -14,7 +14,7 @@ router.get('/delete/:p_id/:id', function (req, res) {
     services.delete_review(req,res);
 })
 
-router.get('/update/:p_id/:id', function (req, res) {
+router.post('/update/:p_id/:id', function (req, res) {
     services.update_review(req,res);
 })
 module.exports = router;

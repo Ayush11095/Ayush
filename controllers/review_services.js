@@ -23,7 +23,7 @@ exports.create_review = (req,res)=>{
 
 exports.update_review = (req,res)=>{
     var content = JSON.parse(req.body.toString()); 
-    formData.findOneAndUpdate({review_id:req.params.r_id,product_id: req.params.p_id},content,{new: true},function (err, doc) {
+    db_review.findOneAndUpdate({r_id:req.params.id,p_id: req.params.p_id},content,{new: true},function (err, doc) {
         if (doc === null) {
         res.send("product review or review id not exist");
         }else {
@@ -33,7 +33,7 @@ exports.update_review = (req,res)=>{
 }
 
 exports.delete_review = (req,res)=>{
-    db_review.deleteOne({review_id:req.params.r_id,product_id: req.params.p_id},function (err, docs) {
+    db_review.deleteOne({r_id:req.params.id,p_id: req.params.p_id},function (err, docs) {
         if (docs.deletedCount === 0){
         res.send("product review or review id not exist");
         } else {
@@ -44,7 +44,7 @@ exports.delete_review = (req,res)=>{
 
 exports.show_product_reviews = (req,res)=>{
     var p_id = req.params.p_id
-    db_review.find({product_id : p_id},function(err,docs){
+    db_review.find({p_id : p_id},function(err,docs){
        if(docs.length){
            res.send(docs);
        }       
