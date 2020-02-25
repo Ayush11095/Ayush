@@ -7,7 +7,7 @@ var Schema = db.Schema({
   p_desc: {type:String,require:true,trim:true},
   p_image:{type:String,require:true},
   obj_id: {type:String,require:true,trim:true},
-  reviews:{ type: Array}
+  //reviews:{ type: Array}
 });
 
 // compile schema to model

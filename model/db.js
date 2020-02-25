@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const string = require("../config/config.json");
-const dbPath = string[0].db_url;
+const url = require("../config/config.json");
+const dbPath = url.db_url;
 mongoose.connect(dbPath, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on("error", () => {

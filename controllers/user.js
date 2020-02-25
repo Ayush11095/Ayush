@@ -2,7 +2,7 @@ var express = require('express');
 var Services = require('./user_service');
 var router = express.Router();
 //var  app = require('../app');
-router.post('/', function(req,res){
+router.post('/register', function(req,res){
     Services.register(req,res)
 })
 

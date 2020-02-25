@@ -17,8 +17,8 @@ exports.create_product = (req,res)=>{
                             p_name: content.p_name,
                             p_desc: content.p_desc,
                             p_image: content.p_image,
-                            obj_id: user_id,
-                            reviews: docs
+                            obj_id: user_id
+                            //reviews: docs
                         })
                         obj.save((err,data)=>{
                             if (!err) {
@@ -33,8 +33,8 @@ exports.create_product = (req,res)=>{
                             p_name: content.p_name,
                             p_desc: content.p_desc,
                             p_image: content.p_image,
-                            obj_id: user_id,
-                            reviews: []
+                            obj_id: user_id
+                            // reviews: []
                         })
                         obj.save((err,data)=>{
                             if (!err) {

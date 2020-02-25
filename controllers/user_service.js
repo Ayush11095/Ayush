@@ -12,8 +12,18 @@ exports.register = (req,res)=>{
         password: bcrypt.hashSync(content.password,10)
     })
     obj.save((err,data)=>{
-        if(!err){res.send('user registered')}
-        else{res.send(err)}
+        if(!err){
+            res.json({
+            success:true,
+            message: 'User registered successfully',
+            data :{
+            firstname: obj.firstname,
+            lastname:obj.lastname,
+            email: obj.email
+            }
+            })
+        }
+        else{res.status(404).send('invalid data formate')}
     });
 }
 
