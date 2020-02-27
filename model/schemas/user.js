@@ -1,7 +1,7 @@
 
 const db = require('../db');
 /**
- * RegisterSchema
+ * UserRegisterSchema
  */
 const RegiterSchema= db.Schema({
     firstname:{type:String,trim:true},
@@ -19,4 +19,4 @@ RegiterSchema.path('password').required(true,'password can not be blank.');
 /**
  * Save the Schema
  */
-module.exports = db.model('Register',RegiterSchema);
+module.exports = db.model('user',RegiterSchema);

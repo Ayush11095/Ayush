@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ayush11095/Ayush#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0"
   }
 }
